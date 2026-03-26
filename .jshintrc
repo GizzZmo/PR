@@ -2,5 +2,7 @@
   "esversion": 6,
   "browser": true,
   "undef": false,
-  "unused": false
+  "unused": false,
+  "strict": "global",
+  "laxbreak": true
 }
