@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  push:
+    branches: ["main", "copilot/**"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  validate:
+    name: Lint & Validate
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install validators
+        run: |
+          npm install -g htmlhint stylelint stylelint-config-standard jshint
+
+      - name: Lint HTML
+        run: htmlhint index.html
+
+      - name: Lint CSS
+        run: stylelint "src/css/**/*.css" --allow-empty-input
+
+      - name: Lint JavaScript
+        run: jshint src/js/main.js
+
+      - name: Check for broken internal links
+        run: |
+          echo "Checking for placeholder href='#' links..."
+          count=$(grep -c 'href="#"' index.html || true)
+          echo "Found $count placeholder links (expected – replace with real URLs before launch)"

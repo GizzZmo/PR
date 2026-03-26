@@ -1,5 +1,10 @@
 # Jon Arve Ovesen – Promotional Website
 
+[![CI](https://github.com/GizzZmo/PR/actions/workflows/ci.yml/badge.svg)](https://github.com/GizzZmo/PR/actions/workflows/ci.yml)
+[![Deploy to GitHub Pages](https://github.com/GizzZmo/PR/actions/workflows/deploy.yml/badge.svg)](https://github.com/GizzZmo/PR/actions/workflows/deploy.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Website](https://img.shields.io/badge/Website-Live-brightgreen)](https://gizzzmo.github.io/PR/)
+
 A single-page promotional and PR website for **Jon Arve Ovesen**, Norwegian composer,
 producer, and sound architect from Eidsvoll, Norway.
 
